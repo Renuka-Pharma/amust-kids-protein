@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AMUST Kids · Daily nutrition support for growing children</title>
+<meta name="description" content="AMUST Kids chocolate nutrition supplement with protein, DHA, vitamins and minerals — for everyday nutrition guidance from a qualified dietician.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={
+theme:{
+extend:{
+colors:{
+brand:{ navy:'#143b75', navyDeep:'#0c2852', sunshine:'#fff7d6', malt:'#3d2914'},
+accent:{ teal:'#0d9488', leaf:'#16a34a', grape:'#7c3aed', coral:'#ea580c' },
+guide:{ cream:'#FFFBF5',cream2:'#FEF9E7',navy:'#002147',gold:'#FFD966',goldBright:'#F9D549',muted:'#4A5568',footer:'#FFF2CC',footerTint:'#FDF0D1'}
+},
+fontFamily:{sans:['Plus Jakarta Sans','system-ui','sans-serif']}
+}
+}
+};
+</script>
+<style>
+html{scroll-behavior:smooth}
+.wa-no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+.wa-no-scrollbar::-webkit-scrollbar{display:none}
+.mask-icon{display:block;height:2rem;width:2rem;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;background-color:currentColor;-webkit-mask-image:var(--mi);mask-image:var(--mi)}
+</style>
+</head>
+<body class="bg-white text-slate-800 antialiased font-sans">
+<a href="#main" class="fixed left-1/2 top-0 z-[100] -translate-x-1/2 -translate-y-full rounded-full bg-white px-5 py-2 text-sm font-semibold text-brand-navy shadow-xl transition-transform focus-visible:translate-y-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-teal">Skip to content</a>
+<div class="sticky top-0 z-50 border-b border-yellow-100/80 bg-brand-sunshine/95 backdrop-blur-md">
+<div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+<a href="#" class="text-lg font-extrabold tracking-tight text-brand-navy" aria-label="AMUST Kids home">AMUST<span class="font-bold text-accent-leaf"> Kids</span></a>
+<nav aria-label="Page sections" class="hidden gap-6 text-sm font-semibold text-brand-navy/80 md:flex">
+<a class="rounded-md px-1 py-1 transition hover:text-brand-navyDeep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy" href="#why">Why AMUST Kids</a>
+<a class="rounded-md px-1 py-1 transition hover:text-brand-navyDeep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy" href="#how">How to use</a>
+<a class="rounded-md px-1 py-1 transition hover:text-brand-navyDeep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy" href="#nutrition">Nutrition</a>
+<a class="rounded-md px-1 py-1 transition hover:text-brand-navyDeep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy" href="#parents">Parents</a>
+</nav>
+<div class="flex shrink-0 items-center gap-2">
+<button type="button" id="openWaModalSticky" class="hidden rounded-full bg-accent-leaf px-4 py-2 text-xs font-bold text-white shadow-md shadow-green-900/10 transition hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy md:inline-flex">Email</button>
+<button type="button" id="navToggle" aria-expanded="false" aria-controls="mobileNav" class="inline-flex rounded-full border border-brand-navy/15 bg-white p-2 text-brand-navy md:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-navy" aria-label="Open menu"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+</div>
+</div>
+<div id="mobileNav" class="hidden border-t border-yellow-100/80 bg-brand-sunshine px-4 py-4 md:hidden">
+<a class="block rounded-lg py-3 text-sm font-semibold text-brand-navy" href="#why">Why AMUST Kids</a>
+<a class="block rounded-lg py-3 text-sm font-semibold text-brand-navy" href="#how">How to use</a>
+<a class="block rounded-lg py-3 text-sm font-semibold text-brand-navy" href="#nutrition">Nutrition</a>
+<a class="block rounded-lg py-3 text-sm font-semibold text-brand-navy" href="#parents">Parents</a>
+<button type="button" id="openWaModalMobileNav" class="mt-2 block w-full rounded-xl bg-accent-leaf py-3 text-center text-sm font-bold text-white shadow-md shadow-green-900/15 transition hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-teal">Email</button>
+</div>
+</div>
+
+<main id="main">
+
+<section aria-labelledby="hero-heading" class="relative overflow-hidden bg-gradient-to-br from-brand-sunshine via-white to-orange-50/40">
+<div class="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl" aria-hidden="true"></div>
+<div class="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-sky-200/30 blur-3xl" aria-hidden="true"></div>
+<div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-12 md:py-24">
+<div class="order-2 md:order-1">
+<p class="mb-4 inline-flex items-center rounded-full border border-brand-navy/10 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-navy/75 shadow-sm backdrop-blur-sm">Chocolate flavour · Guided by dietician</p>
+<h1 id="hero-heading" class="text-4xl font-extrabold leading-tight text-brand-navyDeep md:text-[2.6rem] lg:text-5xl">Complete Daily Nutrition Support for Growing Kids</h1>
+<p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">AMUST Kids is a chocolate-flavoured nutrition supplement with protein, DHA, vitamins, minerals, and zinc — designed to support everyday nutrition when used as directed by a dietician.</p>
+<div id="buy" class="mt-8 flex w-full max-w-xl flex-row flex-wrap items-stretch gap-3">
+<button type="button" id="openWaModalHero" class="inline-flex min-h-[48px] min-w-0 flex-1 basis-[8.5rem] shrink-0 items-center justify-center gap-2 rounded-full border-2 border-brand-navy bg-brand-navy px-3 py-3 text-sm font-bold text-white shadow-lg shadow-brand-navy/20 transition hover:bg-brand-navyDeep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal sm:px-5 sm:text-base"><svg class="h-5 w-5 shrink-0 text-white opacity-95" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="whitespace-normal text-center leading-tight">Email us</span></button>
+<button type="button" id="openWaModalQueryHero" class="inline-flex min-h-[48px] min-w-0 flex-1 basis-[11rem] items-center justify-center rounded-full border border-slate-200/95 bg-white/90 px-2.5 py-2.5 text-center text-[0.6875rem] font-semibold leading-snug text-brand-navy shadow-sm backdrop-blur-sm transition hover:border-brand-navy/35 hover:bg-brand-sunshine/40 hover:text-brand-navyDeep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal sm:px-3 sm:text-[0.8125rem] md:text-sm">Ask a general question instead</button>
+</div>
+</div>
+<div class="order-1 flex justify-center md:order-2">
+<div class="w-full max-w-sm rounded-[2rem] bg-gradient-to-br from-amber-100/90 via-[#fde68a]/80 to-brand-navy/15 p-[5px] shadow-[0_20px_44px_-18px_rgba(20,59,117,0.28)] md:max-w-md lg:max-w-lg">
+<div class="overflow-hidden rounded-[1.625rem] border-2 border-white bg-white shadow-inner ring-2 ring-brand-navy/15">
+<img src="assets/hero-product.png" width="1024" height="1024" sizes="(min-width:768px) 420px, 90vw" class="mx-auto block max-h-[min(56vh,480px)] w-full object-contain" alt="AMUST Kids jar with chocolate accents on illustrated yellow backdrop" decoding="async" fetchpriority="high">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="why" aria-labelledby="why-heading" class="border-y border-slate-100 bg-white py-16 md:py-20">
+<div class="mx-auto max-w-6xl px-4">
+<div class="max-w-2xl">
+<p class="text-sm font-semibold uppercase tracking-wider text-accent-teal">Why parents trust the formula</p>
+<h2 id="why-heading" class="mt-2 text-3xl font-extrabold text-brand-navyDeep md:text-4xl">Why parents choose AMUST Kids</h2>
+<p class="mt-3 text-slate-600">Balanced wording, clear priorities, and thoughtful fortification parents can recognise — always alongside professional guidance.</p>
+</div>
+<div class="mt-12 grid gap-6 md:grid-cols-2">
+<article class="group flex gap-5 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md">
+<div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-sky-50 shadow-inner ring-1 ring-sky-100" aria-hidden="true"><span class="mask-icon text-sky-600" style="--mi:url('assets/icon-dha.png')"></span></div>
+<div>
+<h3 class="text-xl font-bold text-brand-navyDeep">DHA</h3>
+<p class="mt-2 text-slate-600">Supports nutritional needs during childhood development.</p>
+</div>
+</article>
+<article class="group flex gap-5 rounded-3xl border border-slate-100 bg-brand-sunshine/35 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+<div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-orange-50 shadow-inner ring-1 ring-orange-100" aria-hidden="true"><span class="mask-icon text-orange-600" style="--mi:url('assets/icon-protein.png')"></span></div>
+<div>
+<h3 class="text-xl font-bold text-brand-navyDeep">Protein Support</h3>
+<p class="mt-2 text-slate-600">Helps support muscle and bone development as part of a balanced diet.</p>
+</div>
+</article>
+<article class="group flex gap-5 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md">
+<div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 shadow-inner ring-1 ring-green-100" aria-hidden="true"><span class="mask-icon text-accent-leaf" style="--mi:url('assets/icon-sugar-free.png')"></span></div>
+<div>
+<h3 class="text-xl font-bold text-brand-navyDeep">Sugar-Free Formula</h3>
+<p class="mt-2 text-slate-600">Chocolate flavour without added sugar.</p>
+</div>
+</article>
+<article class="group flex gap-5 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md">
+<div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-purple-50 text-accent-grape shadow-inner ring-1 ring-purple-100" aria-hidden="true"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.38" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+<div>
+<h3 class="text-xl font-bold text-brand-navyDeep">Vitamins &amp; Minerals</h3>
+<p class="mt-2 text-slate-600">Fortified with essential micronutrients.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="how" aria-labelledby="how-heading" class="relative bg-gradient-to-b from-guide-cream2 via-guide-cream to-guide-footerTint py-16 md:py-24">
+<div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,217,102,0.12)_0%,_transparent_55%)]"></div>
+<div class="relative mx-auto max-w-6xl px-4">
+<div class="max-w-2xl">
+<p class="text-sm font-bold uppercase tracking-[0.15em] text-guide-goldBright">Preparation</p>
+<h2 id="how-heading" class="mt-2 text-3xl font-extrabold tracking-tight text-guide-navy md:text-4xl">How to use</h2>
+<p class="mt-3 max-w-xl text-base leading-relaxed text-guide-muted">Below are your official prep visuals — titles and disclaimers appear only inside the artwork, so they aren&apos;t stitched twice onto the page.</p>
+</div>
+<div class="mt-10 overflow-hidden rounded-2xl border border-amber-200/40 bg-white/55 p-5 shadow-[0_12px_40px_-24px_rgba(0,33,71,0.12)] md:mt-14 md:rounded-3xl md:p-7 lg:p-8">
+<ol class="grid list-none gap-6 md:grid-cols-3 md:gap-5 lg:gap-6" style="padding:0;margin:0">
+<li>
+<figure class="m-0">
+<h3 id="step-1-heading" class="sr-only">Step one: take lukewarm milk or water</h3>
+<img src="assets/how-step-01.png" width="600" height="720" sizes="(min-width:768px) 31vw, 92vw" class="block h-auto w-full rounded-lg align-middle md:rounded-xl" alt="Step one: lukewarm milk or water beside AMUST Kids — drink at a comfortable temperature. Follow graphic for full instructions." decoding="async" fetchpriority="low" loading="lazy">
+</figure>
+</li>
+<li>
+<figure class="m-0">
+<h3 id="step-2-heading" class="sr-only">Step two: add tablespoon or measured serving</h3>
+<img src="assets/how-step-02.png" width="600" height="720" sizes="(min-width:768px) 31vw, 92vw" class="block h-auto w-full rounded-lg align-middle md:rounded-xl" alt="Step two: add powder to milk or water using tablespoon or clinician scoop guidance — graphic shows pouring into glass." decoding="async" loading="lazy">
+</figure>
+</li>
+<li>
+<figure class="m-0">
+<h3 id="step-3-heading" class="sr-only">Step three: stir well and serve</h3>
+<img src="assets/how-step-03.png" width="600" height="720" sizes="(min-width:768px) 31vw, 92vw" class="block h-auto w-full rounded-lg align-middle md:rounded-xl" alt="Step three: stir prepared drink well for smooth chocolate aroma; serve promptly per graphic instructions." decoding="async" loading="lazy">
+</figure>
+</li>
+</ol>
+</div>
+
+<div class="mt-10 max-w-2xl rounded-2xl border border-guide-navy/10 bg-white/80 px-5 py-4 text-guide-navy backdrop-blur-sm md:mx-auto md:text-center">
+<p class="text-sm font-medium leading-relaxed text-guide-navy/90">Stay within dietician directions, never exceed recommended serving. If wording differs between cards and elsewhere, defer to printed artwork.</p>
+</div>
+</div>
+</section>
+
+<section id="nutrition" aria-labelledby="nutrition-heading" class="bg-brand-navyDeep py-16 text-white md:py-20">
+<div class="mx-auto max-w-6xl px-4">
+<div class="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
+<div>
+<p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200/70">Facts you can reconcile</p>
+<h2 id="nutrition-heading" class="mt-2 text-3xl font-extrabold md:text-4xl">Nutrition highlights</h2>
+<p class="mt-4 text-blue-100/85">Panels sometimes mismatch serving weight with macro columns. Below uses the flyer-standard <strong class="font-semibold text-white">30&nbsp;g scoop</strong> together with labelled protein — then derives carbohydrate mass from remaining powder so numbers stay internally consistent.</p>
+<div class="mt-10 space-y-4">
+<p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200/70">Featured nutrients</p>
+<dl class="space-y-3 text-lg font-semibold text-white">
+<div class="flex flex-wrap gap-x-3 gap-y-1"><dt class="text-blue-100/85">Protein</dt><dd>7.2&nbsp;g per 30&nbsp;g serving</dd></div>
+<div class="flex flex-wrap gap-x-3 gap-y-1"><dt class="text-blue-100/85">DHA</dt><dd>24&nbsp;mg per serving</dd></div>
+<div class="flex flex-wrap gap-x-3 gap-y-1"><dt class="text-blue-100/85">Vitamin profile</dt><dd>Vitamins A,&nbsp;C,&nbsp;E and B‑complex vitamins</dd></div>
+<div class="flex flex-wrap gap-x-3 gap-y-1"><dt class="text-blue-100/85">Mineral support</dt><dd>Calcium, iron, zinc, magnesium and more trace minerals</dd></div>
+</dl>
+</div>
+</div>
+<div class="rounded-[2rem] bg-white px-8 py-8 text-brand-navy shadow-2xl shadow-black/30">
+<h3 class="text-lg font-extrabold text-brand-navyDeep">Adjusted macro balance (dry powder)</h3>
+<p class="mt-3 text-sm text-slate-600">Based on formulation math: subtract protein from serving mass to approximate carbohydrates in bulk base; energy shown is from protein plus carbohydrates — fat is negligible on label.</p>
+<div class="mt-6 divide-y divide-slate-100 text-sm">
+<div class="flex justify-between gap-4 py-3 font-semibold text-brand-navyDeep"><span>Serving size</span><span>30&nbsp;g</span></div>
+<div class="flex justify-between gap-4 py-3"><span class="text-slate-600">Protein</span><span class="font-bold text-brand-navyDeep">7.2&nbsp;g</span></div>
+<div class="flex justify-between gap-4 py-3"><span class="text-slate-600">Carbohydrate (approx.)*</span><span class="font-bold text-brand-navyDeep">~21&nbsp;g</span></div>
+<div class="flex justify-between gap-4 py-3"><span class="text-slate-600">Fat (approx.)</span><span class="font-bold text-brand-navyDeep">trace</span></div>
+<div class="flex justify-between gap-4 py-3 font-semibold text-brand-navyDeep"><span>Energy (dry mix, rounded)</span><span>≈118&nbsp;kcal*</span></div>
+</div>
+<p class="mt-4 text-xs leading-relaxed text-slate-500">*Residual mass after labelled protein (~22.8&nbsp;g). Treat as approximate bulk carbohydrate from base ingredients.<br>Some packs list 55&nbsp;g carbohydrate beside a 30&nbsp;g scoop on the carton — those columns do not reconcile; defer to audited batch paperwork or clinician calculations when prescribing.</p>
+</div>
+</div>
+<div class="mt-10 rounded-2xl border border-white/15 bg-white/10 px-5 py-4 text-xs text-blue-100/85">
+Important: This webpage is descriptive only. It does not diagnose, treat, or replace medical nutrition therapy. Discuss integration with meals and growth goals before changing routines.</div>
+</div>
+</section>
+
+<section id="parents" aria-labelledby="parents-heading" class="bg-brand-sunshine py-16 md:py-20">
+<div class="mx-auto max-w-4xl px-4 text-center">
+<p class="text-sm font-semibold uppercase tracking-wider text-brand-navy">Thoughtful guardians</p>
+<h2 id="parents-heading" class="mt-3 text-3xl font-extrabold text-brand-navyDeep md:text-4xl">Who is it for?</h2>
+<p class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">For parents looking to add a structured nutrition supplement to their child&apos;s daily routine, under dietician guidance.</p>
+<p class="mx-auto mt-6 rounded-3xl bg-white px-6 py-4 text-base font-semibold text-brand-navy shadow-md">Prefer partnership over promises — AMUST Kids is positioned as disciplined daily support, never a judgement about your child&apos;s appearance or energy.</p>
+</div>
+</section>
+
+<section id="footer-contact" aria-label="Closing call to action" class="relative overflow-hidden bg-gradient-to-tr from-accent-leaf to-emerald-500 py-16 text-white">
+<div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),transparent_55%)]"></div>
+<div class="relative mx-auto max-w-4xl px-4 text-center">
+<h2 class="text-3xl font-extrabold">Ready to organise your next carton?</h2>
+<p class="mt-4 text-green-50">Share what you need in the quick form—we open your mail app with a prefilled draft to AMUST Kids.</p>
+<div class="mt-10 flex flex-col items-center justify-center gap-4">
+<button type="button" id="openWaModalFoot" class="inline-flex min-h-[48px] w-full max-w-md items-center justify-center gap-2 rounded-full bg-white px-10 py-3 text-base font-bold text-emerald-800 shadow-xl transition hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"><svg class="h-6 w-6 shrink-0 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Continue by email</button>
+<button type="button" id="openWaModalFootQuery" class="text-base font-semibold text-white/95 underline decoration-2 underline-offset-4 transition hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navyDeep">General enquiry only</button>
+</div>
+</section>
+
+</main>
+
+<footer class="border-t border-slate-100 bg-slate-50 py-10 text-sm text-slate-500">
+<div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 md:flex-row md:items-center md:justify-between">
+<p class="font-semibold text-brand-navy">AMUST<span class="text-accent-leaf"> Kids</span></p>
+<p class="max-w-xl">Dietary food supplement • Not for medicinal use • Store sealed, cool, dry, away from sunlight • Imagery illustrative</p>
+</div>
+</footer>
+
+<div id="waModalRoot" class="wa-no-scrollbar fixed inset-0 z-[2147483647] hidden flex flex-col overflow-y-auto overflow-x-hidden bg-brand-navy/60 px-4 py-6 backdrop-blur-sm sm:justify-center sm:py-10" aria-hidden="true">
+<div class="relative z-[2] mx-auto my-auto flex w-full max-w-[calc(100vw-32px)] min-w-0 justify-center sm:max-w-xl md:my-12 md:max-w-2xl">
+<div role="dialog" aria-modal="true" aria-labelledby="waModalTitle" class="wa-no-scrollbar max-h-[min(92vh,860px)] w-full overflow-hidden overflow-y-auto overscroll-contain rounded-2xl border border-slate-200/90 bg-white shadow-2xl shadow-black/35 sm:rounded-3xl md:max-h-[90vh]">
+<div class="relative p-5 pb-6 sm:p-7 md:p-8">
+<button type="button" id="waModalCloseBtn" class="absolute right-3 top-3 rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-teal sm:right-4 sm:top-4" aria-label="Close"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M6 6l12 12"/></svg></button>
+<form id="waPrefillForm" class="space-y-4 pt-10 sm:space-y-5 sm:pt-6">
+<h2 id="waModalTitle" class="pr-16 text-xl font-extrabold leading-tight text-brand-navyDeep sm:pr-4 md:text-2xl">Prefilled email to AMUST Kids</h2>
+<p class="text-sm leading-relaxed text-slate-600">Choose order or enquiry, fill what applies, then we open your mail app with this text—you tap Send.</p>
+<label class="block text-left">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">What is this?</span>
+<select id="waPurpose" required class="min-h-[48px] w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base font-semibold text-brand-navy shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal">
+<option value="order">Order (quantity, packs, timing)</option>
+<option value="enquiry">Question about the product</option>
+</select>
+</label>
+<div id="waOrderFields" class="space-y-4 rounded-2xl border border-slate-100 bg-brand-sunshine/35 p-4 sm:p-5">
+<p class="text-xs font-bold uppercase tracking-wider text-brand-navy/60">Order details</p>
+<div class="grid gap-4 sm:grid-cols-2">
+<label class="block sm:col-span-2">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">Product</span>
+<input type="text" readonly value="AMUST Kids – Chocolate" class="min-h-[48px] w-full cursor-default rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-base font-semibold text-brand-navy shadow-inner"/>
+</label>
+<label class="block">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">Approx. qty<span class="text-red-600"> *</span></span>
+<input type="text" id="waQty" inputmode="decimal" autocomplete="off" placeholder="e.g. 4 jars / 2 cartons" class="min-h-[48px] w-full rounded-xl border border-slate-200 px-4 py-3 text-base text-slate-800 shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal"/>
+</label>
+<label class="block">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">Pack preference</span>
+<select id="waPackKind" class="min-h-[48px] w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base font-semibold text-brand-navy shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal">
+<option value="">Not sure yet</option>
+<option value="Jars">Jars only</option>
+<option value="Cartons / bundles">Cartons / bundles</option>
+<option value="Single trial">Single packs / trials</option>
+</select>
+</label>
+<label class="block">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">When do you need it?</span>
+<select id="waWhenNeed" class="min-h-[48px] w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base font-semibold text-brand-navy shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal">
+<option value="">Select timing</option>
+<option value="ASAP">As soon as you can dispatch</option>
+<option value="Within a week">Within a week</option>
+<option value="Within the month">Within the month</option>
+<option value="Flexible">Flexible timing</option>
+</select>
+</label>
+<label class="block sm:col-span-2">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">Delivery city or PIN<span class="font-normal text-slate-400"> optional</span></span>
+<input type="text" id="waDeliveryPin" autocomplete="shipping postal-code" class="min-h-[48px] w-full rounded-xl border border-slate-200 px-4 py-3 text-base text-slate-800 shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal" placeholder="For freight / ETA estimates"/>
+</label>
+</div>
+</div>
+<label class="block">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">Your name<span class="font-normal text-slate-400"> optional</span></span>
+<input type="text" id="waName" autocomplete="name" class="min-h-[48px] w-full rounded-xl border border-slate-200 px-4 py-3 text-base text-slate-800 shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal"/>
+</label>
+<label class="block">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">Your phone / WhatsApp<span class="text-red-600"> *</span></span>
+<input type="tel" id="waMobile" autocomplete="tel" required inputmode="tel" class="min-h-[48px] w-full rounded-xl border border-slate-200 px-4 py-3 text-base text-slate-800 shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal" placeholder="Include country code if outside India"/>
+</label>
+<label class="block">
+<span class="mb-2 block text-sm font-semibold text-brand-navy">City or area<span class="font-normal text-slate-400"> optional</span></span>
+<input type="text" id="waCity" autocomplete="address-level2" class="min-h-[48px] w-full rounded-xl border border-slate-200 px-4 py-3 text-base text-slate-800 shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal"/>
+</label>
+<label class="block">
+<span id="waDetailLabel" class="mb-2 block text-sm font-semibold text-brand-navy">Notes</span>
+<textarea id="waDetails" rows="4" class="min-h-[120px] w-full resize-y rounded-xl border border-slate-200 px-4 py-3 text-base leading-relaxed text-slate-800 shadow-inner focus-visible:border-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent-teal" placeholder="Access details, clinician notes, substitutions, allergens to double-check"></textarea>
+</label>
+<p id="waFormError" class="hidden rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-800" role="alert"></p>
+<div class="sticky bottom-0 -mx-4 border-t border-slate-100 bg-white/95 px-4 pb-1 pt-3 backdrop-blur sm:-mx-7 sm:px-7 md:-mx-8 md:px-8">
+<div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+<button type="button" id="waModalCancelBtn" class="inline-flex min-h-[48px] w-full items-center justify-center rounded-full border-2 border-slate-200 px-6 py-3 text-base font-semibold text-slate-700 transition hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-teal sm:w-auto">Cancel</button>
+<button type="submit" class="inline-flex min-h-[48px] w-full flex-1 items-center justify-center gap-2 rounded-full bg-accent-leaf px-8 py-3 text-base font-bold text-white shadow-lg shadow-green-900/15 transition hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"><svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Open email app</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const waModal=document.getElementById('waModalRoot');
+const waDialog=waModal?waModal.querySelector('[role="dialog"]'):null;
+const waClose=document.getElementById('waModalCloseBtn');
+const waCancel=document.getElementById('waModalCancelBtn');
+const waForm=document.getElementById('waPrefillForm');
+const waPurpose=document.getElementById('waPurpose');
+const waOrderFields=document.getElementById('waOrderFields');
+const waQty=document.getElementById('waQty');
+const waPackKind=document.getElementById('waPackKind');
+const waWhenNeed=document.getElementById('waWhenNeed');
+const waDeliveryPin=document.getElementById('waDeliveryPin');
+const waName=document.getElementById('waName');
+const waMobile=document.getElementById('waMobile');
+const waCity=document.getElementById('waCity');
+const waDetailLabel=document.getElementById('waDetailLabel');
+const waDetails=document.getElementById('waDetails');
+const waErr=document.getElementById('waFormError');
+let lastTrigger=null;
+
+const toggleOrderBlock=function(isOrder){
+if(!waOrderFields)return;
+waOrderFields.classList.toggle('hidden',!isOrder);
+waOrderFields.querySelectorAll('input:not([readonly]),select').forEach(function(el){
+if(isOrder){
+el.removeAttribute('disabled');
+}else{
+el.setAttribute('disabled','disabled');
+el.removeAttribute('required');
+}
+});
+if(!waQty)return;
+if(isOrder){waQty.setAttribute('required','required');}
+else{waQty.removeAttribute('required');}
+};
+
+const syncPurposeUI=function(){
+if(!waPurpose)return;
+var isOrder=waPurpose.value==='order';
+toggleOrderBlock(isOrder);
+if(isOrder){
+if(waDetailLabel)waDetailLabel.textContent='Extra notes optional';
+if(waDetails){waDetails.removeAttribute('required');waDetails.placeholder='Floor or gate codes, clinician ref, substitutions, allergens';}
+}else{
+if(waDetailLabel)waDetailLabel.textContent='Your question';
+if(waDetails){waDetails.setAttribute('required','required');waDetails.placeholder='Be specific so the team can reply by email.';}
+}
+if(waErr){waErr.classList.add('hidden');waErr.textContent='';}
+};
+
+const openWaModal=function(pref){
+if(!waModal)return;
+if(pref==='enquiry'&&waPurpose)waPurpose.value='enquiry';
+if(pref==='order'&&waPurpose)waPurpose.value='order';
+syncPurposeUI();
+waModal.classList.remove('hidden');
+waModal.setAttribute('aria-hidden','false');
+document.body.style.overflow='hidden';
+setTimeout(function(){
+var f=document.getElementById('waPurpose');
+if(f)f.focus();
+},10);
+document.addEventListener('keydown',onKeyDown,true);
+};
+
+const closeWaModal=function(){
+if(!waModal)return;
+if(waForm)waForm.reset();
+syncPurposeUI();
+waModal.classList.add('hidden');
+waModal.setAttribute('aria-hidden','true');
+document.body.style.overflow='';
+document.removeEventListener('keydown',onKeyDown,true);
+if(lastTrigger&&typeof lastTrigger.focus==='function')lastTrigger.focus();
+lastTrigger=null;
+};
+
+function onKeyDown(e){
+if(e.key==='Escape')closeWaModal();
+}
+
+const showErr=function(msg){
+if(!waErr)return;
+waErr.textContent=msg;
+waErr.classList.remove('hidden');
+};
+
+['openWaModalHero','openWaModalFoot','openWaModalSticky','openWaModalMobileNav'].forEach(function(id){
+var b=document.getElementById(id);
+if(!b)return;
+b.addEventListener('click',function(){lastTrigger=b;openWaModal('order');if(id==='openWaModalMobileNav'){var nt=document.getElementById('navToggle');var mn=document.getElementById('mobileNav');if(nt&&mn&&window.matchMedia('(max-width:767px)').matches){nt.setAttribute('aria-expanded','false');mn.classList.add('hidden');nt.setAttribute('aria-label','Open menu');}}});
+});
+['openWaModalQueryHero','openWaModalFootQuery'].forEach(function(id){
+var b=document.getElementById(id);
+if(b)b.addEventListener('click',function(){lastTrigger=b;openWaModal('enquiry');});
+});
+if(waPurpose)waPurpose.addEventListener('change',syncPurposeUI);
+
+if(waDialog){
+waDialog.addEventListener('click',function(ev){ev.stopPropagation();});
+}
+if(waModal){
+waModal.addEventListener('click',function(){closeWaModal();});
+}
+[waClose,waCancel].forEach(function(el){
+if(el)el.addEventListener('click',function(){closeWaModal();});
+});
+
+if(waForm){
+waForm.addEventListener('submit',function(ev){
+ev.preventDefault();
+syncPurposeUI();
+var name=(waName&&waName.value||'').trim();
+var rawMob=(waMobile&&waMobile.value||'').trim();
+var city=(waCity&&waCity.value||'').trim();
+var detail=(waDetails&&waDetails.value||'').trim();
+var digits=rawMob.replace(/\D+/g,'');
+var isOrder=waPurpose&&waPurpose.value==='order';
+var qty=(waQty&&waQty.value||'').trim();
+var pack=(waPackKind&&waPackKind.value||'').trim();
+var whenNeed=(waWhenNeed&&waWhenNeed.value||'').trim();
+var delPin=(waDeliveryPin&&waDeliveryPin.value||'').trim();
+
+if(digits.length<8){showErr('Enter a reachable mobile number so the team can follow up.');return;}
+if(isOrder){
+if(!qty.length){showErr('Add an approximate quantity (jars cartons or bundles).');return;}
+}else{
+if(detail.replace(/\s/g,'').length<12){showErr('Write your question in a sentence or two.');return;}
+}
+
+var payload={
+purpose:isOrder?'order':'enquiry',
+name:name,
+mobile:rawMob,
+city:city,
+detail:detail,
+qty:qty,
+pack:pack,
+whenNeed:whenNeed,
+deliveryPin:delPin
+};
+
+var tab=window.open('about:blank','_blank');
+if(tab)try{tab.opener=null;}catch(oex){}
+if(!tab){
+showErr('Pop-up was blocked. Allow pop-ups for this site so your email app opens in a new tab.');
+return;
+}
+
+fetch('/api/email-handoff',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+.then(function(r){
+return r.text().then(function(t){
+var data={};
+try{data=t?JSON.parse(t):{};}catch(ex){data={}}
+if(!r.ok){
+try{if(tab&&!tab.closed)tab.close();}catch(x){}
+var msg=data&&data.error||(r.status===404?'Contact form endpoint missing. Deploy on Vercel (or run dev-server.js locally).':'Something went wrong.');
+showErr(msg);
+return;
+}
+if(!data.mailtoUrl){try{if(tab&&!tab.closed)tab.close();}catch(x2){}showErr('Something went wrong.');return;}
+closeWaModal();
+try{
+tab.focus();
+tab.location.href=data.mailtoUrl;
+}catch(eNav){
+try{if(tab&&!tab.closed)tab.close();}catch(x3){}
+window.open(data.mailtoUrl,'_blank','noopener,noreferrer');
+}
+});
+})
+.catch(function(){
+try{if(tab&&!tab.closed)tab.close();}catch(x4){}
+showErr('Could not reach the server. Deploy on Vercel or try again.');
+});
+});
+}
+
+syncPurposeUI();
+
+var navToggle=document.getElementById('navToggle');
+var mobileNav=document.getElementById('mobileNav');
+if(navToggle&&mobileNav){
+var handleToggle=function(){
+var expanded=navToggle.getAttribute('aria-expanded')==='true';
+navToggle.setAttribute('aria-expanded',(!expanded).toString());
+mobileNav.classList.toggle('hidden',expanded);
+navToggle.setAttribute('aria-label',expanded?'Open menu':'Close menu');
+};
+navToggle.addEventListener('click',handleToggle);
+mobileNav.querySelectorAll('a').forEach(function(link){
+link.addEventListener('click',function(){if(window.matchMedia('(max-width:767px)').matches){navToggle.setAttribute('aria-expanded','false');mobileNav.classList.add('hidden');navToggle.setAttribute('aria-label','Open menu');}});
+});
+}
+
+})();
+</script>
+
+</body>
+</html>

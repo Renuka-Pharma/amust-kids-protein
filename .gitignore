@@ -1,0 +1,5 @@
+.vercel
+.env*.local
+.venv-iconcrop
+.DS_Store
+node_modules/
