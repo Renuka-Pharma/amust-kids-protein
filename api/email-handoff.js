@@ -1,7 +1,7 @@
 'use strict';
 
-var originAllow = require('./_originAllow.js');
-var limitedBody = require('./_limitedJsonBody.js');
+var originAllow = require('../lib/originAllow.js');
+var limitedBody = require('../lib/limitedJsonBody.js');
 
 var JSON_CAP = Number(process.env.HANDOFF_MAX_JSON_BYTES || 49152);
 
