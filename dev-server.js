@@ -8,6 +8,7 @@ var emailHandler = require('./api/email-handoff.js');
 
 var root = __dirname;
 var PORT = Number(process.argv[2]) || 8081;
+var BODY_MAX_BYTES = Number(process.env.HANDOFF_MAX_JSON_BYTES || 49152);
 
 function loadEnvFile(rel) {
   try {
@@ -45,7 +46,16 @@ var guessMime = {
 function bufferPost(req) {
   return new Promise(function (resolve, reject) {
     var chunks = [];
+    var sum = 0;
     req.on('data', function (c) {
+      sum += c.length;
+      if (sum > BODY_MAX_BYTES) {
+        reject(new Error('body too large'));
+        try {
+          req.destroy && req.destroy();
+        } catch (eD) {}
+        return;
+      }
       chunks.push(c);
     });
     req.on('end', function () {
@@ -93,8 +103,14 @@ var server = http.createServer(async function (req, res) {
         }
         await waHandler(req, res);
       } catch (e2) {
-        res.statusCode = 500;
-        res.end();
+        if (e2 && e2.message === 'body too large') {
+          res.statusCode = 413;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ error: 'Payload too large.' }));
+        } else {
+          res.statusCode = 500;
+          res.end();
+        }
       }
       return;
     }
@@ -119,8 +135,14 @@ var server = http.createServer(async function (req, res) {
         }
         await emailHandler(req, res);
       } catch (e3) {
-        res.statusCode = 500;
-        res.end();
+        if (e3 && e3.message === 'body too large') {
+          res.statusCode = 413;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ error: 'Payload too large.' }));
+        } else {
+          res.statusCode = 500;
+          res.end();
+        }
       }
       return;
     }

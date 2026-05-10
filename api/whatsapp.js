@@ -1,6 +1,19 @@
+'use strict';
+
+var originAllow = require('./_originAllow.js');
+var limitedBody = require('./_limitedJsonBody.js');
+
+var JSON_CAP = Number(process.env.HANDOFF_MAX_JSON_BYTES || 49152);
+
+function prodStrictOrigins() {
+  return process.env.NODE_ENV === 'production' || !!process.env.VERCEL || !!process.env.AWS_LAMBDA_FUNCTION_NAME;
+}
+
 function sendJson(res, code, payload) {
   res.statusCode = code;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.setHeader('Cache-Control', 'no-store');
+  res.setHeader('Cross-Origin-Resource-Policy', 'same-origin');
   res.end(JSON.stringify(payload));
 }
 
@@ -31,45 +44,39 @@ function buildMessage(payload) {
 
 function sanitize(s, maxLen) {
   if (typeof s !== 'string') return '';
-  return s.trim().slice(0, maxLen || 1200);
-}
-
-function resolveBody(req) {
+  var v = '';
   try {
-    var b = req.body;
-    if (b === undefined || b === null || b === '') return Promise.resolve({});
-    if (typeof Buffer !== 'undefined' && Buffer.isBuffer(b))
-      return Promise.resolve(JSON.parse(b.toString('utf8') || '{}'));
-    if (typeof b === 'string') return Promise.resolve(b.trim() ? JSON.parse(b) : {});
-    if (typeof b === 'object') return Promise.resolve(b);
-  } catch (e) {
-    return Promise.resolve(null);
+    v = Buffer.from(String(s).trim(), 'utf8').toString('utf8');
+  } catch (eSan) {
+    v = '';
   }
-  return Promise.resolve(null);
+  var max = typeof maxLen === 'number' && maxLen > 0 ? maxLen : 1200;
+  if (typeof TextEncoder !== 'undefined') {
+    var enc = new TextEncoder();
+    var dec = new TextDecoder('utf8');
+    var bytes = enc.encode(v);
+    if (bytes.length > max) bytes = bytes.slice(0, max);
+    return dec.decode(bytes).replace(/\u0000/g, '');
+  }
+  return v.slice(0, max).replace(/\u0000/g, '');
 }
 
 module.exports = async function handler(req, res) {
   try {
     if (req.method === 'OPTIONS') {
       res.setHeader('Allow', 'POST');
+      res.setHeader('Cache-Control', 'no-store');
       res.statusCode = 204;
       return res.end();
     }
     if (req.method !== 'POST') return sendJson(res, 405, { error: 'Method not allowed' });
 
     var allowStr = process.env.WHATSAPP_ALLOWED_ORIGINS || '';
-    var allowList = allowStr.split(',').map(function (x) { return x.trim(); }).filter(Boolean);
-    if (allowList.length) {
-      var origin = (req.headers.origin || '').trim();
-      var originOk =
-        !!origin &&
-        allowList.some(function (a) {
-          return origin === a || origin.indexOf(a) === 0;
-        });
-      if (!originOk) return sendJson(res, 403, { error: 'Not allowed.' });
-    }
+    var originOpts = { requireHttps: prodStrictOrigins() };
+    if (!originAllow.originAllowlisted(req.headers.origin, allowStr, originOpts))
+      return sendJson(res, 403, { error: 'Not allowed.' });
 
-    var body = await resolveBody(req);
+    var body = await limitedBody.resolveLimitedBody(req, JSON_CAP);
     if (!body || typeof body !== 'object') return sendJson(res, 400, { error: 'Invalid request.' });
 
     var purpose = body.purpose === 'enquiry' ? 'enquiry' : 'order';
